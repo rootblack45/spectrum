@@ -1,17 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spectrum | Audio visualizer</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
     <script src="assets/lib/p5.min.js"></script>
-    <script src="assets/lib/p5.sound.min.js"></script>
+    <script src="assets/lib/p5.sound.js"></script>
+    <script src="assets/js/helpers/controller/controller.js"></script>
+    <script src="assets/js/helpers/controller/progress.controller.js"></script>
+    <script src="assets/js/helpers/controller/playback.controller.js"></script>
+    <script src="assets/js/helpers/controller/volume.controller.js"></script>
+    <script src="assets/js/helpers/controller/time.controller.js"></script>
     <script src="assets/js/sketch.js"></script>
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
   </head>
-  <body></body>
+  <body class="bg-gray-900">
+    <footer class="bg-gray-900 fixed bottom-0 text-white w-full px-2">
+      <div id="progress-panel" class="cursor-pointer">
+        <div role="slider" class="relative h-4 overflow-hidden touch-none">
+          <div
+            id="progress-slider"
+            class="absolute top-1/2 left-0 -mt-2 w-4 h-4 rounded-full bg-rose-500 before:absolute before:block before:top-1/2 before:-left-[100vw] before:-mt-0.5 before:w-screen before:h-1 before:bg-rose-500 after:absolute after:block after:top-1/2 after:left-4 after:-mt-0.5 after:w-screen after:h-1 after:bg-white/20"
+            style="left: 0%"
+          ></div>
+        </div>
+      </div>
+      <div class="flex space-x-4 items-center transition-transform">
+        <button id="play-btn" class="pt-1 pb-2 duration-150 hover:scale-110">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="36px"
+            viewBox="0 0 24 24"
+            width="36px"
+            fill="#FFFFFF"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+        <div id="volume-area" class="flex">
+          <button id="mute-btn" class="pt-1 pb-2 duration-150 hover:scale-110">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#FFFFFF"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+              />
+            </svg>
+          </button>
+          <div
+            id="volume-panel"
+            class="inline-block w-0 pt-1 pb-2 transition-all cursor-pointer"
+          >
+            <div
+              role="slider"
+              class="relative h-full overflow-hidden touch-none"
+            >
+              <div
+                id="volume-slider"
+                class="absolute top-1/2 left-0 -mt-1 w-2 h-2 rounded-full bg-white before:absolute before:block before:top-1/2 before:-left-20 before:-mt-0.5 before:w-20 before:h-1 before:bg-white after:absolute after:block after:top-1/2 after:left-2 after:-mt-0.5 after:w-20 after:h-1 after:bg-white/20"
+                style="left: calc(100% - 0.5rem)"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="inline-block py-2 font-light text-gray-300">
+          <span>
+            <span id="time-current">-</span>
+            <span> / </span>
+            <span id="time-duration">-</span>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
