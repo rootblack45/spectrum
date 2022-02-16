@@ -13,10 +13,14 @@ function setup() {
     createCanvas(windowWidth, windowHeight)
 
     controller = new Controller()
+    controller.add(new ProgressController())
+    controller.add(new PlaybackController())
+    controller.add(new VolumeController())
+    controller.add(new TimeController())
 }
 
 function draw() {
-    controller.controllers.forEach(c => c.draw?.())
+    controller.controllers.forEach((c) => c.draw?.())
 }
 
 function windowResized() {

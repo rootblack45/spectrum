@@ -3,12 +3,8 @@
  */
 class Controller {
     controllers = []
-    constructor() {
-        this.controllers = [
-            new ProgressController(),
-            new PlaybackController(),
-            new VolumeController(),
-            new TimeController()
-        ]
+
+    add(controller) {
+        this.controllers.push(controller)
     }
 }
