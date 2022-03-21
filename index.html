@@ -9,6 +9,7 @@
         <script src="/assets/lib/p5.sound.js"></script>
         <script src="/assets/js/components/particle.component.js"></script>
         <script src="/assets/js/controller/controller.js"></script>
+        <script src="/assets/js/controller/menu.controller.js"></script>
         <script src="/assets/js/controller/playback.controller.js"></script>
         <script src="/assets/js/controller/progress.controller.js"></script>
         <script src="/assets/js/controller/time.controller.js"></script>
@@ -34,63 +35,66 @@
                     ></div>
                 </div>
             </div>
-            <div class="flex items-center space-x-4 transition-transform">
-                <button
-                    id="play-btn"
-                    class="pt-1 pb-2 duration-150 hover:scale-110"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="36px"
-                        viewBox="0 0 24 24"
-                        width="36px"
-                        fill="#FFFFFF"
-                    >
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                </button>
-                <div id="volume-area" class="flex">
+            <div class="flex justify-between transition-transform">
+                <div class="flex items-center space-x-4">
                     <button
-                        id="mute-btn"
+                        id="play-btn"
                         class="pt-1 pb-2 duration-150 hover:scale-110"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            height="24px"
+                            height="36px"
                             viewBox="0 0 24 24"
-                            width="24px"
+                            width="36px"
                             fill="#FFFFFF"
                         >
                             <path d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
-                            />
+                            <path d="M8 5v14l11-7z" />
                         </svg>
                     </button>
-                    <div
-                        id="volume-panel"
-                        class="inline-block w-0 cursor-pointer pt-1 pb-2 transition-all"
-                    >
+                    <div id="volume-area" class="flex">
+                        <button
+                            id="mute-btn"
+                            class="pt-1 pb-2 duration-150 hover:scale-110"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24px"
+                                viewBox="0 0 24 24"
+                                width="24px"
+                                fill="#FFFFFF"
+                            >
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+                                />
+                            </svg>
+                        </button>
                         <div
-                            role="slider"
-                            class="relative h-full touch-none overflow-hidden"
+                            id="volume-panel"
+                            class="inline-block w-0 cursor-pointer pt-1 pb-2 transition-all"
                         >
                             <div
-                                id="volume-slider"
-                                class="absolute top-1/2 left-0 -mt-1 h-2 w-2 rounded-full bg-white before:absolute before:top-1/2 before:-left-20 before:-mt-0.5 before:block before:h-1 before:w-20 before:bg-white after:absolute after:top-1/2 after:left-2 after:-mt-0.5 after:block after:h-1 after:w-20 after:bg-white/20"
-                                style="left: calc(100% - 0.5rem)"
-                            ></div>
+                                role="slider"
+                                class="relative h-full touch-none overflow-hidden"
+                            >
+                                <div
+                                    id="volume-slider"
+                                    class="absolute top-1/2 left-0 -mt-1 h-2 w-2 rounded-full bg-white before:absolute before:top-1/2 before:-left-20 before:-mt-0.5 before:block before:h-1 before:w-20 before:bg-white after:absolute after:top-1/2 after:left-2 after:-mt-0.5 after:block after:h-1 after:w-20 after:bg-white/20"
+                                    style="left: calc(100% - 0.5rem)"
+                                ></div>
+                            </div>
                         </div>
                     </div>
+                    <div class="inline-block py-2 font-light text-gray-300">
+                        <span>
+                            <span id="time-current">-</span>
+                            <span> / </span>
+                            <span id="time-duration">-</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="inline-block py-2 font-light text-gray-300">
-                    <span>
-                        <span id="time-current">-</span>
-                        <span> / </span>
-                        <span id="time-duration">-</span>
-                    </span>
-                </div>
+                <div id="menus" class="flex items-center space-x-3"></div>
             </div>
         </footer>
     </body>

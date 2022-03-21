@@ -14,15 +14,16 @@ function preload() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
 
+    visualizer = new Visualizer();
+    visualizer.add(new RaindropVisualizer());
+    visualizer.add(new SpectrumVisualizer());
+
     controller = new Controller();
+    controller.add(new MenuController(visualizer));
     controller.add(new PlaybackController());
     controller.add(new ProgressController());
     controller.add(new TimeController());
     controller.add(new VolumeController());
-
-    visualizer = new Visualizer();
-    visualizer.add(new RaindropVisualizer());
-    visualizer.add(new SpectrumVisualizer());
 }
 
 function draw() {
