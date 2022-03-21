@@ -571,6 +571,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.bg-gray-900\/75 {
+  background-color: rgb(17 24 39 / 0.75);
+}
+
 .bg-rose-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(244 63 94 / var(--tw-bg-opacity));
@@ -579,6 +583,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.from-gray-900 {
+  --tw-gradient-from: #111827;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(17 24 39 / 0));
+}
+
+.to-transparent {
+  --tw-gradient-to: transparent;
+}
+
+.to-gray-100 {
+  --tw-gradient-to: #f3f4f6;
+}
+
+.to-gray-900\/10 {
+  --tw-gradient-to: rgb(17 24 39 / 0.1);
+}
+
+.to-gray-900\/0 {
+  --tw-gradient-to: rgb(17 24 39 / 0);
 }
 
 .px-2 {

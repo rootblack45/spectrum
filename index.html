@@ -12,23 +12,27 @@
         <script src="assets/js/controller/progress.controller.js"></script>
         <script src="assets/js/controller/time.controller.js"></script>
         <script src="assets/js/controller/volume.controller.js"></script>
+        <script src="assets/js/visualizer/visualizer.js"></script>
+        <script src="assets/js/visualizer/spectrum.visualizer.js"></script>
         <script src="assets/js/sketch.js"></script>
     </head>
     <body class="bg-gray-900">
-        <footer class="bg-gray-900 fixed bottom-0 text-white w-full px-2">
+        <footer
+            class="fixed bottom-0 w-full bg-gradient-to-t from-gray-900 px-2 text-white"
+        >
             <div id="progress-panel" class="cursor-pointer">
                 <div
                     role="slider"
-                    class="relative h-4 overflow-hidden touch-none"
+                    class="relative h-4 touch-none overflow-hidden"
                 >
                     <div
                         id="progress-slider"
-                        class="absolute top-1/2 left-0 -mt-2 w-4 h-4 rounded-full bg-rose-500 before:absolute before:block before:top-1/2 before:-left-[100vw] before:-mt-0.5 before:w-screen before:h-1 before:bg-rose-500 after:absolute after:block after:top-1/2 after:left-4 after:-mt-0.5 after:w-screen after:h-1 after:bg-white/20"
+                        class="absolute top-1/2 left-0 -mt-2 h-4 w-4 rounded-full bg-rose-500 before:absolute before:top-1/2 before:-left-[100vw] before:-mt-0.5 before:block before:h-1 before:w-screen before:bg-rose-500 after:absolute after:top-1/2 after:left-4 after:-mt-0.5 after:block after:h-1 after:w-screen after:bg-white/20"
                         style="left: 0%"
                     ></div>
                 </div>
             </div>
-            <div class="flex space-x-4 items-center transition-transform">
+            <div class="flex items-center space-x-4 transition-transform">
                 <button
                     id="play-btn"
                     class="pt-1 pb-2 duration-150 hover:scale-110"
@@ -64,15 +68,15 @@
                     </button>
                     <div
                         id="volume-panel"
-                        class="inline-block w-0 pt-1 pb-2 transition-all cursor-pointer"
+                        class="inline-block w-0 cursor-pointer pt-1 pb-2 transition-all"
                     >
                         <div
                             role="slider"
-                            class="relative h-full overflow-hidden touch-none"
+                            class="relative h-full touch-none overflow-hidden"
                         >
                             <div
                                 id="volume-slider"
-                                class="absolute top-1/2 left-0 -mt-1 w-2 h-2 rounded-full bg-white before:absolute before:block before:top-1/2 before:-left-20 before:-mt-0.5 before:w-20 before:h-1 before:bg-white after:absolute after:block after:top-1/2 after:left-2 after:-mt-0.5 after:w-20 after:h-1 after:bg-white/20"
+                                class="absolute top-1/2 left-0 -mt-1 h-2 w-2 rounded-full bg-white before:absolute before:top-1/2 before:-left-20 before:-mt-0.5 before:block before:h-1 before:w-20 before:bg-white after:absolute after:top-1/2 after:left-2 after:-mt-0.5 after:block after:h-1 after:w-20 after:bg-white/20"
                                 style="left: calc(100% - 0.5rem)"
                             ></div>
                         </div>
