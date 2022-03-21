@@ -20,9 +20,9 @@ function setup() {
     controller.add(new TimeController());
     controller.add(new VolumeController());
 
-    const fft = new p5.FFT();
     visualizer = new Visualizer();
-    visualizer.add(new SpectrumVisualizer(fft));
+    visualizer.add(new RaindropVisualizer());
+    visualizer.add(new SpectrumVisualizer());
 }
 
 function draw() {

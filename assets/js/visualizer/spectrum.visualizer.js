@@ -6,8 +6,8 @@ class SpectrumVisualizer {
     #frameCount = 0;
     #voltage = 0;
 
-    constructor(fft) {
-        this.#fft = fft;
+    constructor() {
+        this.#fft = new p5.FFT();
     }
 
     draw() {
