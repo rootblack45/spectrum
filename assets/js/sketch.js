@@ -13,10 +13,10 @@ function setup() {
     createCanvas(windowWidth, windowHeight)
 
     controller = new Controller()
-    controller.add(new ProgressController())
     controller.add(new PlaybackController())
-    controller.add(new VolumeController())
+    controller.add(new ProgressController())
     controller.add(new TimeController())
+    controller.add(new VolumeController())
 }
 
 function draw() {
